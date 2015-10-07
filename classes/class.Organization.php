@@ -2,7 +2,9 @@
 
 class Organization extends Ad {
 
-  protected $organization_form_id = 1;
- 
+  public function __construct(array $values) {
+	parent::__construct($values);
+	$this->organization_form_id = 1;
+  }
 
 }

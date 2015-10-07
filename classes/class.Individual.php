@@ -2,6 +2,9 @@
 
 class Individual extends Ad {
 
-  protected $organization_form_id = 0;
-  
+  public function __construct(array $values) {
+	parent::__construct($values);
+	$this->organization_form_id = 0;
+  }
+
 }

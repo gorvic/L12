@@ -85,11 +85,15 @@ class AdsStorage {
 	
 	if ($edit_id) {
 
+	  $ad = $this->getAd($edit_id);
+	  if (empty($ad)) {
+	    die('Неверный id объявления');
+	  }
+	  
 	  $smarty->assign('button_name', 'edit');
 	  $smarty->assign('button_value', 'Записать изменения');
 	  $smarty->assign('default_edit_id', $edit_id);
 	  
-	  $ad = $this->getAd($edit_id);
 	  $smarty->assign('is_allow_mail', $ad->getAllowMails() == 1 ? 'checked' : '');
 	  $smarty->assign('ad_person', $ad->getOrganizationFormId() == 0 ? 'Ваше имя' : 'Название организации');
 	  

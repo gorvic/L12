@@ -90,7 +90,7 @@ class DatabaseObject {
    * @param array $record
    * @return class_name's object
    */
-  private static function instantiate($record) {
+  protected static function instantiate($record) {
 	// Could check that $record exists and is an array
 	$class_name = get_called_class();
 	$object = new $class_name;
@@ -186,11 +186,11 @@ class DatabaseObject {
    * @global type $database Database' object
    * @return boolean
    */
-  public function delete() {
+  public static function delete($id) {
 
 	global $database;
 	$sql = "DELETE FROM " . static::$table_name;
-	$sql .= " WHERE id=" . intval($this->id);
+	$sql .= " WHERE id=" . intval($id);
 	$sql .= " LIMIT 1";
 	$affected_rows = $database->query($sql);
 	return ($affected_rows == 1) ? true : false;

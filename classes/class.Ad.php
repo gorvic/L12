@@ -2,6 +2,9 @@
 
 class Ad extends DatabaseObject {
 
+//  const ORGANIZATION_FORM_INDIVIDIAL = 0;
+//  const ORGANIZATION_FORM_ORGANIZATION = 1;
+  
   protected static $table_name = "ads";
   protected static $db_fields = array('id', 
 									  'seller_name',
@@ -27,6 +30,29 @@ class Ad extends DatabaseObject {
   protected $email;
   protected $organization_form_id;
 
+  public static function find_by_sql($sql = "") {
+
+	global $database;
+
+	$result_set = $database->select($sql);
+
+	$object_array = array();
+	foreach ($result_set as $row) {
+	  
+	  if ( (int)$row['organization_form_id'] == 0 ) {
+		$object = new Individual($row); //add by id of record
+	  } elseif ( (int)$row['organization_form_id'] == 1 ) {
+		$object = new Organization($row); //add by id of record
+	  } else {
+		$object = new Ad($row); //add by id of record
+	  }
+	  
+	  
+	  $object_array[$row['id']] = $object;
+	}
+	return $object_array;
+  }
+  
   /**
    * Getters
    */
@@ -130,22 +156,12 @@ class Ad extends DatabaseObject {
 	return get_object_vars($this);
   }
   
-  public static function build(array $values) {
+
+  public function __construct(array $values) {
 	
-	if ($values->organization_form_id == 0) {
-	  $class_name = "Individual";
-	} elseif ($values->organization_form_id == 1) {
-	  $class_name  = "Organization";
-	} else {
-	  $class_name = get_called_class(); //throw new Exception ('Unexpected class');
-	}
-	
-	$object = new $class_name;
 	foreach ($values as $property_name => $property_value) {
-	  if (property_exists($class_name, $property_name)) {
-		$object->$property_name = $property_value;
-	  }
+		$this->$property_name = $property_value;
 	}
-	return $object;
   }
+  
 }
