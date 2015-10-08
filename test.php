@@ -1,33 +1,7 @@
 <?php
+header("Content-Type: text/html; charset=utf-8");
+require_once ('./includes/initialize.php');
 
-class Preferences {
-    private $props = array();
-    private static $instance;
-
-    private function __construct() { }
-
-    public static function getInstance() {
-        if ( empty( self::$instance ) ) {
-            self::$instance = new Preferences();
-        }
-        return self::$instance;
-    }
-
-    public function setProperty( $key, $val ) {
-        $this->props[$key] = $val;
-    }
-
-    public function getProperty( $key ) {
-        return $this->props[$key];
-    }
-}
-
-
-$pref = Preferences::getInstance();
-$pref->setProperty( "name", "matt" );
-
-unset( $pref ); // remove the reference
-
-$pref2 = Preferences::getInstance();
-print $pref2->getProperty( "name" ) ."\n"; // demonstrate value is not lost
-?>
+$smarty->assign('cities', ['City1','City2','City3']);
+$smarty->assign('location_id',0);
+$smarty->display('test.tpl');

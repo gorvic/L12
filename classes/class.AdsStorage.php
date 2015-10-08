@@ -140,7 +140,8 @@ class AdsStorage {
 	$row = '';
 	foreach ($this->ads as $ad) {
 	  $smarty->assign('ad_in_table', $ad);
-	  $row.=$smarty->fetch('table_row.tpl.html');
+	  $row.=$smarty->fetch('table_row_'.strtolower(get_class($ad)).'.tpl.html');		
+
 	}
 
 	$smarty->assign('ads_rows', $row);
