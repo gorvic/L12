@@ -47,7 +47,7 @@
                                 <div class="form-group form-group-sm">
                                     <div class="col-sm-12">
                                         <div class="checkbox">
-                                            <label for="allow_mails" class="col-sm-10 control-label">
+                                            <label for="allow_mails" class="col-sm-12 control-label">
                                                 <input type="checkbox" value ="1" name="allow_mails" id="allow_mails" {$is_allow_mail}> Я не хочу получать вопросы по объявлению по e-mail
                                             </label>
                                         </div>

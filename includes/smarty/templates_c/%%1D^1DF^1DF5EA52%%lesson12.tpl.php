@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2015-10-09 16:38:34
+<?php /* Smarty version 2.6.25-dev, created on 2015-10-09 16:54:45
          compiled from lesson12.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios', 'lesson12.tpl', 29, false),array('function', 'html_options', 'lesson12.tpl', 69, false),array('modifier', 'default', 'lesson12.tpl', 29, false),)), $this); ?>
@@ -52,7 +52,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios
                                 <div class="form-group form-group-sm">
                                     <div class="col-sm-12">
                                         <div class="checkbox">
-                                            <label for="allow_mails" class="col-sm-10 control-label">
+                                            <label for="allow_mails" class="col-sm-12 control-label">
                                                 <input type="checkbox" value ="1" name="allow_mails" id="allow_mails" <?php echo $this->_tpl_vars['is_allow_mail']; ?>
 > Я не хочу получать вопросы по объявлению по e-mail
                                             </label>
