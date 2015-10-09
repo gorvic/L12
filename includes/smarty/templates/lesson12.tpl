@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lesson 12</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../../css/stylesheet.css">
+        <link rel="stylesheet" href="css/stylesheet.css">
   {*      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.css">
         <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.js"></script>*}
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-5"> 
+                <div class="col-md-6"> 
                     {include file='table.tpl.html'}
                 </div>
             </div>

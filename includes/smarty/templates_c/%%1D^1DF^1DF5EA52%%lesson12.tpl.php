@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2015-10-08 20:21:24
+<?php /* Smarty version 2.6.25-dev, created on 2015-10-09 14:10:48
          compiled from lesson12.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios', 'lesson12.tpl', 28, false),array('function', 'html_options', 'lesson12.tpl', 68, false),array('modifier', 'default', 'lesson12.tpl', 28, false),)), $this); ?>
@@ -10,14 +10,14 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lesson 12</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../../css/stylesheet.css">
+        <link rel="stylesheet" href="css/stylesheet.css">
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </head>
     <body style="width:1280px;padding: 5px;">
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4>
@@ -153,7 +153,7 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios
                     </div>
                 </div>
 
-                <div class="col-md-5"> 
+                <div class="col-md-6"> 
                     <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'table.tpl.html', 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
