@@ -12,7 +12,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </head>
     <body style="width:1280px;padding: 5px;">
-        <div class="container">
+        <div class="container-fluid">
             {*            <div class="span12"> *}
             <div class="row">
                 <div class="col-md-offset-2 col-md-5">
