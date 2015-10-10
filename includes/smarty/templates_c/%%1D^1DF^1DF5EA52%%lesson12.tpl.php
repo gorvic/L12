@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.25-dev, created on 2015-10-09 16:54:45
+<?php /* Smarty version 2.6.25-dev, created on 2015-10-10 21:11:28
          compiled from lesson12.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios', 'lesson12.tpl', 29, false),array('function', 'html_options', 'lesson12.tpl', 69, false),array('modifier', 'default', 'lesson12.tpl', 29, false),)), $this); ?>
@@ -13,10 +13,10 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios
         <link rel="stylesheet" href="css/stylesheet.css">
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </head>
-    <body style="width:1280px;padding: 5px;">
+    <body style="padding: 5px;">
         <div class="container-fluid">
                         <div class="row">
-                <div class="col-md-offset-2 col-md-5">
+                <div class="col-md-offset-1 col-md-5">
                     <div class="panel panel-primary">
                         <div class="panel-heading pagination-centered">
                             <h4>
@@ -128,9 +128,9 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios
                                 <div class="col-md-offset-2 col-md-12"> 
                                     <div class="btn-group btn-group-md">
                                         <button type="submit" name="<?php echo $this->_tpl_vars['button_name']; ?>
-" value=<?php echo $this->_tpl_vars['button_value']; ?>
- class="btn btn-default"><?php echo $this->_tpl_vars['button_value']; ?>
-                                    <?php if ($this->_tpl_vars['button_name'] == 'edit'): ?> 
+" value="<?php echo $this->_tpl_vars['button_value']; ?>
+" class="btn btn-default"><?php echo $this->_tpl_vars['button_value']; ?>
+</button>                                    <?php if ($this->_tpl_vars['button_name'] == 'edit'): ?> 
                                                 <input type="hidden" name="id" id="hiddenField" value="<?php echo $this->_tpl_vars['default_edit_id']; ?>
 " />
                                             <?php endif; ?>

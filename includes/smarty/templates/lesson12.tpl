@@ -11,11 +11,11 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.js"></script>*}
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </head>
-    <body style="width:1280px;padding: 5px;">
+    <body style="padding: 5px;">
         <div class="container-fluid">
             {*            <div class="span12"> *}
             <div class="row">
-                <div class="col-md-offset-2 col-md-5">
+                <div class="col-md-offset-1 col-md-5">
                     <div class="panel panel-primary">
                         <div class="panel-heading pagination-centered">
                             <h4>
@@ -131,7 +131,7 @@
 
                                 <div class="col-md-offset-2 col-md-12"> 
                                     <div class="btn-group btn-group-md">
-                                        <button type="submit" name="{$button_name}" value={$button_value} class="btn btn-default">{$button_value}                                    {if $button_name eq 'edit'} 
+                                        <button type="submit" name="{$button_name}" value="{$button_value}" class="btn btn-default">{$button_value}</button>                                    {if $button_name eq 'edit'} 
                                                 <input type="hidden" name="id" id="hiddenField" value="{$default_edit_id}" />
                                             {/if}
                                                 <button type="submit"  class="btn btn-default" name="cancel">Отмена</button>
