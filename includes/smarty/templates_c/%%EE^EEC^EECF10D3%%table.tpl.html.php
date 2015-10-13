@@ -1,6 +1,6 @@
-<?php /* Smarty version 2.6.25-dev, created on 2015-10-09 16:12:56
+<?php /* Smarty version 2.6.25-dev, created on 2015-10-12 17:12:02
          compiled from table.tpl.html */ ?>
-<div class="panel panel-primary">
+<div id="panel2" class="panel panel-primary">
     <div class="panel-heading pagination-centered">
         <h4>
             Список объявлений 

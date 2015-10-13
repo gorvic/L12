@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.25-dev, created on 2015-10-10 21:11:28
+<?php /* Smarty version 2.6.25-dev, created on 2015-10-13 07:29:26
          compiled from lesson12.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios', 'lesson12.tpl', 29, false),array('function', 'html_options', 'lesson12.tpl', 69, false),array('modifier', 'default', 'lesson12.tpl', 29, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios', 'lesson12.tpl', 27, false),array('function', 'html_options', 'lesson12.tpl', 67, false),array('modifier', 'default', 'lesson12.tpl', 27, false),)), $this); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,14 +10,15 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lesson 12</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/stylesheet.css">
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </head>
     <body style="padding: 5px;">
         <div class="container-fluid">
-                        <div class="row">
+            <div class="row">
                 <div class="col-md-offset-1 col-md-5">
-                    <div class="panel panel-primary">
+                    <div id="panel1" class="panel panel-primary">
                         <div class="panel-heading pagination-centered">
                             <h4>
                                 Подача объявлений
@@ -130,27 +131,41 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'html_radios
                                         <button type="submit" name="<?php echo $this->_tpl_vars['button_name']; ?>
 " value="<?php echo $this->_tpl_vars['button_value']; ?>
 " class="btn btn-default"><?php echo $this->_tpl_vars['button_value']; ?>
-</button>                                    <?php if ($this->_tpl_vars['button_name'] == 'edit'): ?> 
-                                                <input type="hidden" name="id" id="hiddenField" value="<?php echo $this->_tpl_vars['default_edit_id']; ?>
+</button>     
+                                        <?php if ($this->_tpl_vars['button_name'] == 'edit'): ?> 
+                                            <input type="hidden" name="id" id="hiddenField" value="<?php echo $this->_tpl_vars['default_edit_id']; ?>
 " />
-                                            <?php endif; ?>
-                                                <button type="submit"  class="btn btn-default" name="cancel">Отмена</button>
-                                        </div>
+                                        <?php endif; ?>
+                                        <button type="submit"  class="btn btn-default" name="cancel">Отмена</button>
                                     </div>
-                                </form>
+                                </div>
+                            </form>
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-5"> 
-                        <?php $_smarty_tpl_vars = $this->_tpl_vars;
+                <div class="col-md-5"> 
+                    <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => 'table.tpl.html', 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-                    </div>
                 </div>
             </div>
-        </body>
-    </html>
+        </div>
+      <script>
+           <?php echo '
+                 alert(\'hi\');
+               $(document).ready(
+                       function() {
+                        var h = $("#panel1").height(); 
+                        $("#panel2").height(h);
+                    }
+                     );
+         
+            '; ?>
+                
+        </script>
+    </body>
+</html>

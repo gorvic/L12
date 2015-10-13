@@ -6,17 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lesson 12</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/stylesheet.css">
-        {*      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.css">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.js"></script>*}
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </head>
     <body style="padding: 5px;">
         <div class="container-fluid">
-            {*            <div class="span12"> *}
             <div class="row">
                 <div class="col-md-offset-1 col-md-5">
-                    <div class="panel panel-primary">
+                    <div id="panel1" class="panel panel-primary">
                         <div class="panel-heading pagination-centered">
                             <h4>
                                 Подача объявлений
@@ -131,22 +129,33 @@
 
                                 <div class="col-md-offset-2 col-md-12"> 
                                     <div class="btn-group btn-group-md">
-                                        <button type="submit" name="{$button_name}" value="{$button_value}" class="btn btn-default">{$button_value}</button>                                    {if $button_name eq 'edit'} 
-                                                <input type="hidden" name="id" id="hiddenField" value="{$default_edit_id}" />
-                                            {/if}
-                                                <button type="submit"  class="btn btn-default" name="cancel">Отмена</button>
-                                        </div>
+                                        <button type="submit" name="{$button_name}" value="{$button_value}" class="btn btn-default">{$button_value}</button>     
+                                        {if $button_name eq 'edit'} 
+                                            <input type="hidden" name="id" id="hiddenField" value="{$default_edit_id}" />
+                                        {/if}
+                                        <button type="submit"  class="btn btn-default" name="cancel">Отмена</button>
                                     </div>
-                                </form>
+                                </div>
+                            </form>
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-5"> 
-                        {include file='table.tpl.html'}
-                    </div>
+                <div class="col-md-5"> 
+                    {include file='table.tpl.html'}
                 </div>
             </div>
-        </body>
-    </html>
+        </div>
+      <script>
+           {literal}
+               $(document).ready(
+                       function() {
+                        var h = $("#panel1").height(); 
+                        $("#panel2").height(h);
+                    }
+                     );
+            {/literal}                
+        </script>
+    </body>
+</html>

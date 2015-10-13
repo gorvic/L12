@@ -1,7 +1,11 @@
 .span3 {  
-    height: 300px;
+    height: 520px;
     overflow: auto;
 }
+
+/*.row {
+    height: 500px;
+}*/
 
 .pagination-centered {
 	    text-align: center;
